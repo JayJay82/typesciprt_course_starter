@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+    <html>
+      <head>
+      <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+      <link rel="stylesheet" href="./style.css";  
+    </head>            
+    <body>
+            <div class="container-fluid mt-2">
+                    <div class="row">                 
+                        <div class="col-md-7">
+                            <div>
+                                    <h4>Goal</h4>
+                                    <hr />
+                                    <ul>
+                                        <li>https://www.youtube.com/embed/93p3LxR9xfM</li>
+                                        <li>https://www.youtube.com/embed/XShQO3BvOyM</li>
+                                    </ul>
+                                    <form>
+                                         <div class="row">
+                                              <div class="col-10">
+                                                <input type="text" id="url" class="form-control" placeholder="insert url">
+                                              </div>
+                                              <div class="col">
+                                                <input type="button" class="form-control btn-primary" onclick="addVideo()" value="change video">
+                                              </div>
+                                            </div>
+                                    </form>
+                            </div>
+                            <div>
+                               <hr />
+                            </div>
+                                <div id="video-content" class="embed-responsive embed-responsive-16by9">
+                                        
+                                </div>
+                        </div>
+                        <div class="col-md-5">
+                            <h4>Environment</h4>
+                            <hr />
+                            <ul class="timeline">
+                                <li>
+                                    <a href="https://code.visualstudio.com/">Install Visual Studio Code</a>
+                                </li>
+                                <li>
+                                    <a target="_blank" href="https://nodejs.org/it/">Install NodeJS + Package Manager</a>
+                                    <p>Node.js is an open source server environment</p>
+                                    <ul class="timeline">
+                                        <li>
+                                            <a href="https://nodejs.org/it/">Dowload and Install</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">npm init</a>
+                                            <p>package manager solution init</p>
+                                        </li>
+                                        <li>
+                                            <a href="#">package.json</a>
+                                            <p>Package Manager config file</p>
+                                        </li>
+                                        <li>
+                                            <a href="#">npm run [task] </a>
+                                            <p>run custom stask</p>
+                                        </li>
+                                        <li>
+                                            <a href="#">create source directory [./src] </a>
+        
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#">Install Typescript 3</a>
+                                    <p>Javascript superset</p>
+                                    <ul class="timeline">
+                                            <li>
+                                                <a href="#">npm install typescript --save-dev</a>
+                                                <p>local installation - [./node_modules/.bin/tsc]</p>
+                                            </li>
+                                              <li>
+                                                <a href="#">./node_modules/.bin/tsc --init + tsconfig.json</a>
+                                                <p>init tsc + config file [ "outDir": "./dist", "rootDir": "./src"]</p>
+                                            </li>
+                                             <li>
+                                                <a href="#">create custom task - package.json</a>
+                                                <p>["tsc": "./node_modules/.bin/tsc"]</p>
+                                            </li>
+                                            <li>
+                                            <a href="#">index.ts</a>
+                                            <p>create index.ts file inside ./src folder -> npm run tsc</p>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#">Install Lite-server</a>
+                                    <p>Lite Web Server</p>
+                                    <ul class="timeline">
+                                       <li>
+                                            <a href="#">npm install lite-server --save-dev</a>
+                                            <p>local installation - [./node_modules/.bin/lite-server]</p>
+                                        </li>
+                                         <li>
+                                            <a href="#">create bs-config.json</a>
+                                            <p>  {
+                                                    "port": 8000,
+                                                    "files": ["./dist/**/*.{html,htm,css,js}"],
+                                                    "server": { "baseDir": "./" }
+                                                  }</p>
+                                        </li>
+                                        <li>
+                                            <a href="#">create index.html</a>
+                                            <p> script src="dist/index.js"</p>
+                                        </li>
+                                        <li>
+                                            <a href="#">create custom task - package.json</a>
+                                            <p> ["lite-server" : "./node_modules/.bin/lite-server"]</p>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#">Put it togheter - package.json</a>
+                                    <p>["start" : "npm run tsc && npm run lite-server"]</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>               
+        <script src="dist/index.js"></script>
+        <script>
+                const home = new RequirementComponent();
+                addVideo = () => {
+                     const url = document.getElementById("url").value;
+                     home.onAdd(url);
+                }
+        </script> 
+    </body>
+</html>
